@@ -1,0 +1,25 @@
+{
+    "name": "Leetcode Pdf Generator",
+    "manifest_version": 3,
+    "version": "1.0.0",
+    "permissions": ["cookies","tabs","scripting", "webNavigation", "storage","activeTab","webRequest","declarativeNetRequestWithHostAccess","downloads"],
+    
+    "host_permissions": ["https://leetcode.com/*"],
+    "action": {
+      "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+          "js": ["scripts/jsPDF.js"],
+          "matches": [
+    
+            "https://leetcode.com/*"
+          ],
+          "type":"module"
+        }
+      ],
+      "background": {
+        "service_worker": "bgp.js"
+      }
+  }
+  
